@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Sum Calculator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style type="text/css">
+.error{ color: red; }
+.form-block{
+  padding: 40px;
+  border: 1px solid #f5f5f5;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 0px auto;
+}
+</style>
+.
+<body>
+
+  <form class="form-block">
+    <label> Enter  Number1</label>
+    <input type="text" id="num1" placeholder="Enter valid Number">
+    <label> Enter  Number2</label>
+    <input type="text" id="num2" placeholder="Enter valid Number">
+    <h3 id="total"></h3>
+    <button type="button" onclick="sum()">Add</button>  
+  </form>
+
+<script type="text/javascript">
+  function sum() {
+    var num1 = Number(document.getElementById('num1').value);
+    var num2 = Number(document.getElementById('num2').value);
+    var total = num1 + num2;
+
+    if (isNaN(total)) {
+      document.getElementById('total').innerHTML = "Please enter valid number";
+      document.getElementById('total').classList.add('error');
+    } else {
+      document.getElementById('total').classList.remove('error');
+      document.getElementById('total').innerHTML = total;
+    }
+
+  }
+</script>
+</body>
+</html>
+
+
